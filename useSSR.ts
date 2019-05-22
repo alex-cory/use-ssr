@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
 
-const canUseDOM = (): boolean => !!(
+const canUseDOM: boolean = !!(
   typeof window !== 'undefined' &&
   window.document &&
   window.document.createElement
