@@ -14,7 +14,7 @@ interface UseSSRReturn {
   canUseViewport: boolean,
 }
 
-function useSSR(): UseSSRReturn {
+export default function useSSR(): UseSSRReturn {
   const [inBrowser, setInBrowser] = useState(canUseDOM)
 
   useEffect(() => {
