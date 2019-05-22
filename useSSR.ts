@@ -4,7 +4,7 @@ const canUseDOM = () => !!(
   typeof window !== 'undefined' &&
   window.document &&
   window.document.createElement
-);
+)
 
 function useSSR() {
   const [onBrowser, setOnBrowser] = useState(canUseDOM())
@@ -24,3 +24,5 @@ function useSSR() {
 		canUseViewport: canUseDOM() && !!window.screen
   }
 }
+
+export default useSSR
