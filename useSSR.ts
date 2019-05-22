@@ -1,26 +1,34 @@
 import { useState, useEffect } from 'react'
 
-const canUseDOM = () => !!(
+const canUseDOM = (): boolean => !!(
   typeof window !== 'undefined' &&
   window.document &&
   window.document.createElement
-)
+);
 
-export default function useSSR() {
-  const [onBrowser, setOnBrowser] = useState(canUseDOM())
+interface UseSSRReturn {
+  isBrowser: boolean,
+  isServer: boolean,
+  canUseWorkers: boolean,
+  canUseEventListeners: boolean,
+  canUseViewport: boolean,
+}
+
+function useSSR(): UseSSRReturn {
+  const [inBrowser, setInBrowser] = useState(canUseDOM())
 
   useEffect(() => {
-    setOnBrowser(onBrowser)
+    setInBrowser(inBrowser)
     return () => {
-      setOnBrowser(false)
+      setInBrowser(false)
     }
   }, [canUseDOM()])
 
   return {
-    isBrowser: onBrowser,
-    isServer: !onBrowser,
+    isBrowser: inBrowser,
+    isServer: !inBrowser,
     canUseWorkers: typeof Worker !== 'undefined',
-		canUseEventListeners: canUseDOM() && !!window.addEventListener,
-		canUseViewport: canUseDOM() && !!window.screen
+    canUseEventListeners: canUseDOM() && !!window.addEventListener,
+    canUseViewport: canUseDOM() && !!window.screen
   }
 }
