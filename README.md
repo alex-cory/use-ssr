@@ -78,6 +78,14 @@ const {
   canUseEventListeners,
   canUseViewport,
 } = useSSR()
+// OR
+const [
+  isBrowser,
+  isServer,
+  canUseWorkers,
+  canUseEventListeners,
+  canUseViewport,
+] = useSSR()
 ```
 
 ### Todos
