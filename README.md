@@ -48,5 +48,5 @@ const App = () => {
 ```
 
 ### Todos
-- [X] get codesandbox examples working
+- [X] codesandbox examples
 - [ ] tests
