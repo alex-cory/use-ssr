@@ -24,17 +24,13 @@ export default function useSSR(): UseSSRReturn {
     }
   }, [])
 
-  return Object.assign([
-    inBrowser,
-    !inBrowser,
-    typeof Worker !== 'undefined',
-    inBrowser && !!window.addEventListener,
-    inBrowser && !!window.screen
-  ], {
+  const useSSRObject = {
     isBrowser: inBrowser,
     isServer: !inBrowser,
     canUseWorkers: typeof Worker !== 'undefined',
     canUseEventListeners: inBrowser && !!window.addEventListener,
     canUseViewport: inBrowser && !!window.screen
-  })
+  }
+
+  return Object.assign(Object.values(useSSRObject), useSSRObject)
 }
