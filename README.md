@@ -27,8 +27,7 @@ Features
 - Zero dependencies
 
 ### Examples
-- <a target="_blank" rel="noopener noreferrer" href='https://codesandbox.io/s/usessr-in-nextjs-actual-epb25'>Example 1 - Next.js</a> (if not working -- codesandbox containers are buggy)
-- <a target="_blank" rel="noopener noreferrer" href='https://codesandbox.io/s/usessr-in-nextjs-4gy7v'>Example 2 - Next.js</a>
+- [Example 1 - Next.js codesandbox container](https://codesandbox.io/s/usessr-in-nextjs-actual-epb25) (sometimes containers are buggy, if so try [this example](https://codesandbox.io/s/usessr-in-nextjs-4gy7v))
 
 Installation
 ------------
