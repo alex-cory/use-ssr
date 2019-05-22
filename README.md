@@ -84,3 +84,4 @@ const {
 - [X] codesandbox examples
 - [ ] tests
 - [X] badges
+- [ ] continuous integration
