@@ -6,8 +6,8 @@ Need to know when you're on the server or in the browser in your components? Thi
 Features
 --------
 - SSR (server side rendering) support
-- typescript support
-- zero dependencies
+- TypeScript support
+- Zero dependencies
 
 ### Examples
 - <a target="_blank" rel="noopener noreferrer" href='https://codesandbox.io/s/usessr-in-nextjs-actual-epb25'>Example 1 - Next.js</a> (if not working -- codesandbox containers are buggy)
