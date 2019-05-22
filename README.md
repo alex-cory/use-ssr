@@ -41,7 +41,11 @@ Usage
 
 ```jsx
 const App = () => {
-  const { isBrowser, isServer } = useSSR()
+  var { isBrowser, isServer } = useSSR()
+  
+  // Want array destructuring? You can do that too!
+  var [isBrowser, isServer] = useSSR()
+  
   /*
    * In your browser's chrome devtools console you should see
    * > IS BROWSER: 👍
