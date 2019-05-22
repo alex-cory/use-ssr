@@ -13,7 +13,7 @@ Features
 - <a target="_blank" rel="noopener noreferrer" href='https://codesandbox.io/s/usessr-in-nextjs-4gy7v'>Code Sandbox Example with NextJS</a>
 - <a target="_blank" rel="noopener noreferrer" href='https://codesandbox.io/s/usessr-in-nextjs-actual-epb25'>Code Sandbox Example 2 with NextJS</a>
 
-⚠️ This works, but haven't had time to update examples above
+⚠️ **WARNING**: This is under active development. It works, but haven't had time to update examples above
 
 Installation
 ------------
