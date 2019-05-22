@@ -10,7 +10,7 @@ Features
 - zero dependencies
 
 ### Examples
-- <a target="_blank" rel="noopener noreferrer" href='https://codesandbox.io/s/w6jp7z4pkk'>Code Sandbox Example with NextJS</a>
+- <a target="_blank" rel="noopener noreferrer" href='https://codesandbox.io/s/usessr-in-nextjs-4gy7v'>Code Sandbox Example with NextJS</a>
 
 
 Installation
