@@ -27,7 +27,7 @@ Features
 - Zero dependencies
 
 ### Examples
-- [Example 1 - Next.js codesandbox container](https://codesandbox.io/s/usessr-in-nextjs-actual-epb25) (sometimes containers are buggy, if so try [this example](https://codesandbox.io/s/usessr-in-nextjs-4gy7v))
+- [Example - Next.js - codesandbox container](https://codesandbox.io/s/usessr-in-nextjs-actual-epb25) (sometimes containers are buggy, if so try [this example](https://codesandbox.io/s/usessr-in-nextjs-4gy7v))
 
 Installation
 ------------
