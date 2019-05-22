@@ -10,10 +10,8 @@ Features
 - zero dependencies
 
 ### Examples
-- <a target="_blank" rel="noopener noreferrer" href='https://codesandbox.io/s/usessr-in-nextjs-4gy7v'>Code Sandbox Example with NextJS</a>
-- <a target="_blank" rel="noopener noreferrer" href='https://codesandbox.io/s/usessr-in-nextjs-actual-epb25'>Code Sandbox Example 2 with NextJS</a>
-
-⚠️ **WARNING**: This is under active development. It works, but haven't had time to update examples above
+- <a target="_blank" rel="noopener noreferrer" href='https://codesandbox.io/s/usessr-in-nextjs-actual-epb25'>Example 1 - Next.js</a> (if not working -- codesandbox containers are buggy)
+- <a target="_blank" rel="noopener noreferrer" href='https://codesandbox.io/s/usessr-in-nextjs-4gy7v'>Example 2 - Next.js</a>
 
 Installation
 ------------
@@ -26,23 +24,29 @@ Usage
 -----
 
 ```jsx
-
 const App = () => {
-  const { isBrowser } = useSSR()
-
-  // check your server logs, this should show "false" there
-  console.log('IS BROWSER: ', isBrowser)
-
-  // you should always see 👍 in your browser
+  const { isBrowser, isServer } = useSSR()
+  /*
+   * In your browser's chrome devtools console you should see
+   * > IS BROWSER: 👍
+   * > IS SERVER: 👎
+   *
+   * AND, in your terminal where your server is running you should see
+   * > IS BROWSER: 👎
+   * > IS SERVER: 👍
+   */
+  console.log('IS BROWSER: ', isBrowser ? '👍' : '👎')
+  console.log('IS SERVER: ', isServer ? '👍' : '👎')
   return (
     <>
       Is in browser? {isBrowser ? '👍' : '👎'}
+      <br />
+      Is on server? {isServer ? '👍' : '👎'}
     </>
   )
 }
 ```
 
 ### Todos
-- [ ] get codesandbox examples working
+- [X] get codesandbox examples working
 - [ ] tests
-- [ ] figure out best way to easily show example
