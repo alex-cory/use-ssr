@@ -24,11 +24,17 @@ export default function useSSR(): UseSSRReturn {
     }
   }, [])
 
-  return {
+  return Object.assign([
+    inBrowser,
+    !inBrowser,
+    typeof Worker !== 'undefined',
+    inBrowser && !!window.addEventListener,
+    inBrowser && !!window.screen
+  ], {
     isBrowser: inBrowser,
     isServer: !inBrowser,
     canUseWorkers: typeof Worker !== 'undefined',
     canUseEventListeners: inBrowser && !!window.addEventListener,
     canUseViewport: inBrowser && !!window.screen
-  }
+  })
 }
