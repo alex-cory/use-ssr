@@ -18,7 +18,7 @@
     </a>
 </p>
 
-Need to know when you're on the server or in the browser in your components? This simple hook makes it easy. 🔥
+Need to know when you're *on the server* or *in the browser* in your components? This simple hook makes it easy. 🔥
 
 Features
 --------
