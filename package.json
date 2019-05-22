@@ -1,0 +1,52 @@
+{
+  "name": "use-ssr",
+  "version": "1.0.0",
+  "description": "☯️ React hook to determine if you're on the server or browser",
+  "main": "dist/useSSR.js",
+  "homepage": "https://github.com/alex-cory/use-ssr#readme",
+  "scripts": {
+    "dev": "rm -rf dist && parcel examples/index.html --open",
+    "build": "rm -rf dist && ./node_modules/.bin/tsc --module CommonJS",
+    "prepublish": "yarn build",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alex-cory/use-ssr.git"
+  },
+  "author": "Alex Cory <results@alexcory.com>",
+  "license": "MIT",
+  "private": false,
+  "peerDependencies": {
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6"
+  },
+  "devDependencies": {
+    "@types/jest": "^24.0.12",
+    "@types/react": "^16.8.8",
+    "@types/react-dom": "^16.8.4",
+    "jest": "^24.7.1",
+    "parcel-bundler": "^1.12.3",
+    "typescript": "^3.4.5"
+  },
+  "files": [
+    "dist"
+  ],
+  "bugs": {
+    "url": "https://github.com/alex-cory/use-ssr/issues"
+  },
+  "keywords": [
+    "ssr",
+    "nextjs",
+    "server",
+    "server side rendering",
+    "server side",
+    "client",
+    "browser",
+    "isomorphic",
+    "react",
+    "react-hook",
+    "hooks",
+    "react hooks"
+  ]
+}
