@@ -64,6 +64,19 @@ const App = () => {
 }
 ```
 
+Options
+-------
+
+```js
+const {
+  isBrowser,
+  isServer,
+  canUseWorkers,
+  canUseEventListeners,
+  canUseViewport,
+} = useSSR()
+```
+
 ### Todos
 - [X] codesandbox examples
 - [ ] tests

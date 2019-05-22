@@ -4,7 +4,7 @@ const canUseDOM = (): boolean => !!(
   typeof window !== 'undefined' &&
   window.document &&
   window.document.createElement
-);
+)
 
 interface UseSSRReturn {
   isBrowser: boolean,
@@ -15,20 +15,20 @@ interface UseSSRReturn {
 }
 
 function useSSR(): UseSSRReturn {
-  const [inBrowser, setInBrowser] = useState(canUseDOM())
+  const [inBrowser, setInBrowser] = useState(canUseDOM)
 
   useEffect(() => {
-    setInBrowser(inBrowser)
+    setInBrowser(canUseDOM)
     return () => {
       setInBrowser(false)
     }
-  }, [canUseDOM()])
+  }, [])
 
   return {
     isBrowser: inBrowser,
     isServer: !inBrowser,
     canUseWorkers: typeof Worker !== 'undefined',
-    canUseEventListeners: canUseDOM() && !!window.addEventListener,
-    canUseViewport: canUseDOM() && !!window.screen
+    canUseEventListeners: inBrowser && !!window.addEventListener,
+    canUseViewport: inBrowser && !!window.screen
   }
 }
