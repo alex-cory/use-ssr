@@ -103,3 +103,4 @@ const [
 - [X] badges
 - [ ] continuous integration
 - [ ] greenkeeper
+ - [ ] optimize badges [see awesome badge list](https://github.com/boennemann/badges)
