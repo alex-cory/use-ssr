@@ -49,6 +49,8 @@ Usage
 -----
 
 ```jsx
+import useSSR from 'use-ssr'
+
 const App = () => {
   var { isBrowser, isServer } = useSSR()
   
