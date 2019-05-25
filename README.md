@@ -29,6 +29,8 @@
 
 Need to know when you're *on the server* or *in the browser* in your components? This simple hook makes it easy. 🔥
 
+![](./useSSR.png)
+
 Features
 --------
 - SSR (server side rendering) support
