@@ -108,9 +108,8 @@ const [
 ```
 
 ### Todos
-- [X] codesandbox examples
 - [ ] tests
-- [X] badges
-- [ ] continuous integration
-- [ ] greenkeeper
- - [ ] optimize badges [see awesome badge list](https://github.com/boennemann/badges)
+- [ ] optimize badges [see awesome badge list](https://github.com/boennemann/badges)
+- [X] codesandbox examples
+- [X] continuous integration
+- [X] greenkeeper
