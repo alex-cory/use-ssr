@@ -32,7 +32,7 @@
 
 Need to know when you're *on the server* or *in the browser* in your components? This simple hook makes it easy. 🔥
 
-[![](./useSSR.png)](https://codesandbox.io/s/usessr-in-nextjs-actual-epb25)
+[![](./useSSR.png)](https://codesandbox.io/s/usessr-in-nextjs-actual-epb25) [![Greenkeeper badge](https://badges.greenkeeper.io/alex-cory/use-ssr.svg)](https://greenkeeper.io/)
 
 Features
 --------
