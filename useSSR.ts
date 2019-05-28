@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useMemo } from 'react'
 
 const canUseDOM: boolean = !!(
   typeof window !== 'undefined' &&
@@ -24,13 +24,13 @@ export default function useSSR(): UseSSRReturn {
     }
   }, [])
 
-  const useSSRObject = {
+  const useSSRObject = useMemo(() => ({
     isBrowser: inBrowser,
     isServer: !inBrowser,
     canUseWorkers: typeof Worker !== 'undefined',
     canUseEventListeners: inBrowser && !!window.addEventListener,
     canUseViewport: inBrowser && !!window.screen
-  }
+  }), [inBrowser])
 
-  return Object.assign(Object.values(useSSRObject), useSSRObject)
+  return useMemo(() => Object.assign(Object.values(useSSRObject), useSSRObject), [inBrowser])
 }
