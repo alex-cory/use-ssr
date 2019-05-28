@@ -16,9 +16,20 @@
     <a href="https://github.com/alex-cory/use-ssr/blob/master/license.md">
       <img alt="undefined" src="https://img.shields.io/github/license/alex-cory/use-ssr.svg">
     </a>
+    <a href="https://codeclimate.com/github/alex-cory/use-ssr/maintainability">
+      <img src="https://api.codeclimate.com/v1/badges/e661bf6aa5e4d64502c6/maintainability" />
+    </a>
+    <a href="https://snyk.io/test/github/alex-cory/use-ssr?targetFile=package.json">
+      <img src="https://snyk.io/test/github/alex-cory/use-ssr/badge.svg?targetFile=package.json" alt="Known Vulnerabilities" data-canonical-src="https://snyk.io/test/github/alex-cory/use-ssr?targetFile=package.json" style="max-width:100%;">
+    </a>
+    <a href="https://www.npmjs.com/package/use-ssr">
+      <img src="https://img.shields.io/npm/v/use-ssr.svg" alt="Known Vulnerabilities" data-canonical-src="https://snyk.io/test/github/alex-cory/use-ssr?targetFile=package.json" style="max-width:100%;">
+    </a>
 </p>
 
 Need to know when you're *on the server* or *in the browser* in your components? This simple hook makes it easy. 🔥
+
+[![](./useSSR.png)](https://codesandbox.io/s/usessr-in-nextjs-actual-epb25)
 
 Features
 --------
@@ -40,6 +51,8 @@ Usage
 -----
 
 ```jsx
+import useSSR from 'use-ssr'
+
 const App = () => {
   var { isBrowser, isServer } = useSSR()
   
@@ -78,6 +91,14 @@ const {
   canUseEventListeners,
   canUseViewport,
 } = useSSR()
+// OR
+const [
+  isBrowser,
+  isServer,
+  canUseWorkers,
+  canUseEventListeners,
+  canUseViewport,
+] = useSSR()
 ```
 
 ### Todos
@@ -85,3 +106,5 @@ const {
 - [ ] tests
 - [X] badges
 - [ ] continuous integration
+- [ ] greenkeeper
+ - [ ] optimize badges [see awesome badge list](https://github.com/boennemann/badges)
