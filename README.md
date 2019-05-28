@@ -25,6 +25,9 @@
     <a href="https://www.npmjs.com/package/use-ssr">
       <img src="https://img.shields.io/npm/v/use-ssr.svg" alt="Known Vulnerabilities" data-canonical-src="https://snyk.io/test/github/alex-cory/use-ssr?targetFile=package.json" style="max-width:100%;">
     </a>
+    <a href="https://circleci.com/gh/alex-cory/use-ssr">
+      <img src="https://img.shields.io/circleci/project/github/alex-cory/use-ssr/master.svg" />
+    </a>
 </p>
 
 Need to know when you're *on the server* or *in the browser* in your components? This simple hook makes it easy. 🔥
