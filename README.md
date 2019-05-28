@@ -13,6 +13,9 @@
     <a href="https://bundlephobia.com/result?p=use-ssr">
       <img alt="undefined" src="https://img.shields.io/bundlephobia/minzip/use-ssr.svg">
     </a>
+    <a href="https://greenkeeper.io/">
+      <img src="https://badges.greenkeeper.io/alex-cory/use-ssr.svg">
+    </a>
     <a href="https://github.com/alex-cory/use-ssr/blob/master/license.md">
       <img alt="undefined" src="https://img.shields.io/github/license/alex-cory/use-ssr.svg">
     </a>
