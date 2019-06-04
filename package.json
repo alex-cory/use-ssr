@@ -8,8 +8,11 @@
     "dev": "rm -rf dist && parcel examples/index.html --open",
     "build": "rm -rf dist && ./node_modules/.bin/tsc --module CommonJS",
     "prepublish": "yarn build",
-    "test": "tsc -p . --noEmit && tsc -p . && jest",
-    "test:watch": "tsc -p . --noEmit && tsc -p . && jest --watch"
+    "test": "yarn test:server && yarn test:browser",
+    "test:server": "tsc -p . --noEmit && tsc -p . && jest --env=node useSSR-server.test.ts",
+    "test:server:watch": "tsc -p . --noEmit && tsc -p . && jest --watch --env=node useSSR-server.test.ts",
+    "test:browser": "tsc -p . --noEmit && tsc -p . && jest --env=jsdom useSSR-browser.test.ts",
+    "test:browser:watch": "tsc -p . --noEmit && tsc -p . && jest --watch --env=jsdom useSSR-browser.test.ts"
   },
   "repository": {
     "type": "git",
