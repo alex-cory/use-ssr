@@ -13,6 +13,9 @@
     <a href="https://bundlephobia.com/result?p=use-ssr">
       <img alt="undefined" src="https://img.shields.io/bundlephobia/minzip/use-ssr.svg">
     </a>
+    <a href="https://greenkeeper.io/">
+      <img src="https://badges.greenkeeper.io/alex-cory/use-ssr.svg">
+    </a>
     <a href="https://github.com/alex-cory/use-ssr/blob/master/license.md">
       <img alt="undefined" src="https://img.shields.io/github/license/alex-cory/use-ssr.svg">
     </a>
@@ -24,6 +27,9 @@
     </a>
     <a href="https://www.npmjs.com/package/use-ssr">
       <img src="https://img.shields.io/npm/v/use-ssr.svg" alt="Known Vulnerabilities" data-canonical-src="https://snyk.io/test/github/alex-cory/use-ssr?targetFile=package.json" style="max-width:100%;">
+    </a>
+    <a href="https://circleci.com/gh/alex-cory/use-ssr">
+      <img src="https://img.shields.io/circleci/project/github/alex-cory/use-ssr/master.svg" />
     </a>
 </p>
 
@@ -102,9 +108,8 @@ const [
 ```
 
 ### Todos
-- [X] codesandbox examples
 - [ ] tests
-- [X] badges
-- [ ] continuous integration
-- [ ] greenkeeper
- - [ ] optimize badges [see awesome badge list](https://github.com/boennemann/badges)
+- [ ] optimize badges [see awesome badge list](https://github.com/boennemann/badges)
+- [X] codesandbox examples
+- [X] continuous integration
+- [X] greenkeeper
