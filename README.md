@@ -108,7 +108,7 @@ const [
 ```
 
 ### Todos
-- [ ] tests
+- [X] tests
 - [ ] optimize badges [see awesome badge list](https://github.com/boennemann/badges)
 - [X] codesandbox examples
 - [X] continuous integration
