@@ -109,7 +109,9 @@ const [
 
 ### Todos
 - [X] tests
+- [ ] set up code climate test coverage
 - [ ] optimize badges [see awesome badge list](https://github.com/boennemann/badges)
+  - [ ] add code climate test coverage badge
 - [X] codesandbox examples
 - [X] continuous integration
 - [X] greenkeeper
