@@ -110,6 +110,7 @@ const [
 ### Todos
 - [X] tests
 - [ ] set up code climate test coverage
+- [ ] add typescript array return types
 - [ ] optimize badges [see awesome badge list](https://github.com/boennemann/badges)
   - [ ] add code climate test coverage badge
 - [X] codesandbox examples
