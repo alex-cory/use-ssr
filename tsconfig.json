@@ -1,6 +1,6 @@
 {
   "compilerOptions": {
-    "module": "commonjs",
+    "module": "es2015",
     "moduleResolution": "node",
     "target": "es2017",
     "strict": true,
@@ -14,7 +14,7 @@
     ]
   },
   "include": [
-    "useSSR.ts"
+    "useSSR.ts",
   ],
   "exclude": ["node_modules"]
 }

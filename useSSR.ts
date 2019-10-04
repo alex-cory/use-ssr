@@ -1,22 +1,4 @@
-import { useState, useEffect, useMemo, useRef } from 'react'
-
-interface UseSSRReturn {
-  isBrowser: boolean,
-  isServer: boolean,
-  isNative: boolean,
-  canUseWorkers: boolean,
-  canUseEventListeners: boolean,
-  canUseViewport: boolean,
-}
-
-export enum Device {
-  BROWSER = 'BROWSER',
-  SERVER = 'SERVER',
-  NATIVE = 'NATIVE',
-}
-
-
-const { BROWSER, SERVER, NATIVE } = Device
+import { useState, useEffect, useMemo } from 'react'
 
 const canUseDOM: boolean = !!(
   typeof window !== 'undefined' &&
@@ -24,29 +6,31 @@ const canUseDOM: boolean = !!(
   window.document.createElement
 )
 
-const canUseNative: boolean = typeof navigator != 'undefined' && navigator.product == 'ReactNative'
-
-const location = canUseNative ? NATIVE : canUseDOM ? BROWSER : SERVER
-
+interface UseSSRReturn {
+  isBrowser: boolean,
+  isServer: boolean,
+  canUseWorkers: boolean,
+  canUseEventListeners: boolean,
+  canUseViewport: boolean,
+}
 
 export default function useSSR(): UseSSRReturn {
-  const [whereAmI, setWhereAmI] = useState(location)
+  const [inBrowser, setInBrowser] = useState(canUseDOM)
 
-  const mounted = useRef(false)
   useEffect(() => {
-    if (mounted.current) return
-    mounted.current = true
-    setWhereAmI(location)
-  })
+    setInBrowser(canUseDOM)
+    return () => {
+      setInBrowser(false)
+    }
+  }, [])
 
   const useSSRObject = useMemo(() => ({
-    isBrowser: whereAmI === BROWSER,
-    isServer: whereAmI === SERVER,
-    isNative: whereAmI === NATIVE,
+    isBrowser: inBrowser,
+    isServer: !inBrowser,
     canUseWorkers: typeof Worker !== 'undefined',
-    canUseEventListeners: whereAmI === BROWSER && !!window.addEventListener,
-    canUseViewport: whereAmI === BROWSER && !!window.screen
-  }), [whereAmI])
+    canUseEventListeners: inBrowser && !!window.addEventListener,
+    canUseViewport: inBrowser && !!window.screen
+  }), [inBrowser])
 
-  return useMemo(() => Object.assign(Object.values(useSSRObject), useSSRObject), [whereAmI])
+  return useMemo(() => Object.assign(Object.values(useSSRObject), useSSRObject), [inBrowser])
 }
