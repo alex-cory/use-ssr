@@ -33,7 +33,7 @@
     </a>
 </p>
 
-Need to know when you're *on the server* or *in the browser* in your components? This simple hook makes it easy. 🔥
+Need to know when you're *on the server*, *in the browser* or in *react native* in your components/hooks? This simple hook makes it easy. 🔥
 
 [![](./useSSR.png)](https://codesandbox.io/s/usessr-in-nextjs-actual-epb25)
 
