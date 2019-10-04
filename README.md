@@ -1,5 +1,5 @@
 <h1 align="center">useSSR</h1>
-<p align="center">☯️ React hook to determine if you are on the server or browser</p>
+<p align="center">☯️ React hook to determine if you are on the server, in the browser, or in react native</p>
 <p align="center">
     <a href="https://github.com/alex-cory/use-ssr/pulls">
       <img src="https://camo.githubusercontent.com/d4e0f63e9613ee474a7dfdc23c240b9795712c96/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f5052732d77656c636f6d652d627269676874677265656e2e737667" />
@@ -60,10 +60,10 @@ Usage
 import useSSR from 'use-ssr'
 
 const App = () => {
-  var { isBrowser, isServer } = useSSR()
+  var { isBrowser, isServer, isNative } = useSSR()
   
   // Want array destructuring? You can do that too!
-  var [isBrowser, isServer] = useSSR()
+  var [isBrowser, isServer, isNative] = useSSR()
   
   /*
    * In your browser's chrome devtools console you should see
@@ -76,11 +76,14 @@ const App = () => {
    */
   console.log('IS BROWSER: ', isBrowser ? '👍' : '👎')
   console.log('IS SERVER: ', isServer ? '👍' : '👎')
+  console.log('IS NATIVE: ', isNative ? '👍' : '👎')
   return (
     <>
       Is in browser? {isBrowser ? '👍' : '👎'}
       <br />
       Is on server? {isServer ? '👍' : '👎'}
+      <br />
+      Is react native? {isNative ? '👍' : '👎'}
     </>
   )
 }
@@ -93,6 +96,7 @@ Options
 const {
   isBrowser,
   isServer,
+  isNative,
   canUseWorkers,
   canUseEventListeners,
   canUseViewport,
@@ -101,6 +105,7 @@ const {
 const [
   isBrowser,
   isServer,
+  isNative,
   canUseWorkers,
   canUseEventListeners,
   canUseViewport,
