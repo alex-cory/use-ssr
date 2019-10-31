@@ -41,7 +41,7 @@
     "babel-jest": "^24.9.0",
     "babel-preset-react-native": "4.0.0",
     "jest": "^24.7.1",
-    "metro-react-native-babel-preset": "^0.56.0",
+    "metro-react-native-babel-preset": "^0.57.0",
     "parcel-bundler": "^1.12.3",
     "react": "^16.8.6",
     "react-native": "^0.61.2",
