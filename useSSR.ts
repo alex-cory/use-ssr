@@ -1,5 +1,3 @@
-import { useState, useEffect, useMemo, useRef } from 'react'
-
 interface UseSSRReturn {
   isBrowser: boolean,
   isServer: boolean,
@@ -15,7 +13,6 @@ export enum Device {
   NATIVE = 'NATIVE',
 }
 
-
 const { BROWSER, SERVER, NATIVE } = Device
 
 const canUseDOM: boolean = !!(
@@ -24,29 +21,30 @@ const canUseDOM: boolean = !!(
   window.document.createElement
 )
 
-const canUseNative: boolean = typeof navigator != 'undefined' && navigator.product == 'ReactNative'
+const canUseNative: boolean =
+  typeof navigator != 'undefined' && navigator.product == 'ReactNative'
 
 const location = canUseNative ? NATIVE : canUseDOM ? BROWSER : SERVER
 
+const SSRObject = {
+  isBrowser: location === BROWSER,
+  isServer: location === SERVER,
+  isNative: location === NATIVE,
+  canUseWorkers: typeof Worker !== 'undefined',
+  canUseEventListeners: location === BROWSER && !!window.addEventListener,
+  canUseViewport: location === BROWSER && !!window.screen,
+}
+
+const toArrayObject = () =>
+  Object.assign(Object.values(SSRObject), SSRObject)
+
+let useSSRObject = toArrayObject()
+
+export const weAreServer = () => {
+  SSRObject.isServer = true
+  useSSRObject = toArrayObject()
+}
 
 export default function useSSR(): UseSSRReturn {
-  const [whereAmI, setWhereAmI] = useState(location)
-
-  const mounted = useRef(false)
-  useEffect(() => {
-    if (mounted.current) return
-    mounted.current = true
-    setWhereAmI(location)
-  })
-
-  const useSSRObject = useMemo(() => ({
-    isBrowser: whereAmI === BROWSER,
-    isServer: whereAmI === SERVER,
-    isNative: whereAmI === NATIVE,
-    canUseWorkers: typeof Worker !== 'undefined',
-    canUseEventListeners: whereAmI === BROWSER && !!window.addEventListener,
-    canUseViewport: whereAmI === BROWSER && !!window.screen
-  }), [whereAmI])
-
-  return useMemo(() => Object.assign(Object.values(useSSRObject), useSSRObject), [whereAmI])
+  return useSSRObject
 }
