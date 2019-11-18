@@ -98,6 +98,7 @@ const {
   isBrowser,
   isServer,
   isNative,
+  device, // 'server', 'browser', or 'native'
   canUseWorkers,
   canUseEventListeners,
   canUseViewport,
@@ -107,6 +108,7 @@ const [
   isBrowser,
   isServer,
   isNative,
+  device, // 'server', 'browser', or 'native'
   canUseWorkers,
   canUseEventListeners,
   canUseViewport,
