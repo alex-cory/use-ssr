@@ -1,19 +1,20 @@
 interface UseSSRReturn {
-  isBrowser: boolean,
-  isServer: boolean,
-  isNative: boolean,
-  canUseWorkers: boolean,
-  canUseEventListeners: boolean,
-  canUseViewport: boolean,
+  isBrowser: boolean
+  isServer: boolean
+  isNative: boolean
+  device: Device
+  canUseWorkers: boolean
+  canUseEventListeners: boolean
+  canUseViewport: boolean
 }
 
 export enum Device {
-  BROWSER = 'BROWSER',
-  SERVER = 'SERVER',
-  NATIVE = 'NATIVE',
+  Browser = 'browser',
+  Server = 'server',
+  Native = 'native',
 }
 
-const { BROWSER, SERVER, NATIVE } = Device
+const { Browser, Server, Native } = Device
 
 const canUseDOM: boolean = !!(
   typeof window !== 'undefined' &&
@@ -21,22 +22,21 @@ const canUseDOM: boolean = !!(
   window.document.createElement
 )
 
-const canUseNative: boolean =
-  typeof navigator != 'undefined' && navigator.product == 'ReactNative'
+const canUseNative: boolean = typeof navigator != 'undefined' && navigator.product == 'ReactNative'
 
-const location = canUseNative ? NATIVE : canUseDOM ? BROWSER : SERVER
+const device = canUseNative ? Native : canUseDOM ? Browser : Server
 
 const SSRObject = {
-  isBrowser: location === BROWSER,
-  isServer: location === SERVER,
-  isNative: location === NATIVE,
+  isBrowser: device === Browser,
+  isServer: device === Server,
+  isNative: device === Native,
+  device,
   canUseWorkers: typeof Worker !== 'undefined',
-  canUseEventListeners: location === BROWSER && !!window.addEventListener,
-  canUseViewport: location === BROWSER && !!window.screen,
+  canUseEventListeners: device === Browser && !!window.addEventListener,
+  canUseViewport: device === Browser && !!window.screen,
 }
 
-const toArrayObject = () =>
-  Object.assign(Object.values(SSRObject), SSRObject)
+const toArrayObject = () => Object.assign(Object.values(SSRObject), SSRObject)
 
 let useSSRObject = toArrayObject()
 
@@ -45,6 +45,5 @@ export const weAreServer = () => {
   useSSRObject = toArrayObject()
 }
 
-export default function useSSR(): UseSSRReturn {
-  return useSSRObject
-}
+export const useSSR = (): UseSSRReturn => useSSRObject
+export default useSSR
