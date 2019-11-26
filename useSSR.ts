@@ -37,7 +37,6 @@ const SSRObject = {
   canUseViewport: device === Browser && !!window.screen,
 }
 
-
 const assign = (...args: any[]) => args.reduce((acc, obj) => ({ ...acc, ...obj }), {})
 const values = (obj: any) => Object.keys(obj).map(key => obj[key])
 const toArrayObject = (): UseSSRReturn => assign((values(SSRObject), SSRObject))
