@@ -1,3 +1,4 @@
+
 interface UseSSRReturn {
   isBrowser: boolean
   isServer: boolean
@@ -36,7 +37,9 @@ const SSRObject = {
   canUseViewport: device === Browser && !!window.screen,
 }
 
-const toArrayObject = () => Object.assign(Object.values(SSRObject), SSRObject)
+const assign = (...args: any[]) => args.reduce((acc, obj) => ({ ...acc, ...obj }), {})
+const values = (obj: any) => Object.keys(obj).map(key => obj[key])
+const toArrayObject = (): UseSSRReturn => assign((values(SSRObject), SSRObject))
 
 let useSSRObject = toArrayObject()
 
