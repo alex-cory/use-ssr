@@ -44,7 +44,7 @@
     "metro-react-native-babel-preset": "^0.57.0",
     "parcel-bundler": "^1.12.3",
     "react": "^16.8.6",
-    "react-native": "^0.61.2",
+    "react-native": "^0.62.0",
     "react-native-typescript-transformer": "^1.2.3",
     "react-test-renderer": "^16.8.6",
     "react-testing-library": "^8.0.0",
