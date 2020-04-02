@@ -7,7 +7,8 @@
   "scripts": {
     "dev": "rm -rf dist && parcel examples/index.html --open",
     "build": "rm -rf dist && ./node_modules/.bin/tsc --module CommonJS",
-    "prepublishOnly": "yarn build && yarn test",
+    "build:production": "yarn build -p tsconfig.production.json",
+    "prepublishOnly": "yarn test && yarn build:production",
     "test": "yarn test:server && yarn test:browser",
     "test:server": "tsc -p . --noEmit && tsc -p . && jest --env=node useSSR-server.test.ts",
     "test:server:watch": "tsc -p . --noEmit && tsc -p . && jest --watch --env=node useSSR-server.test.ts",
