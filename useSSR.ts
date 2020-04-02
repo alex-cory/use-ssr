@@ -37,6 +37,7 @@ const SSRObject = {
   canUseViewport: device === Browser && !!window.screen,
 }
 
+// TODO: instead of this, do a polyfill for `Object.assign` https://www.npmjs.com/package/es6-object-assign
 const assign = (...args: any[]) => args.reduce((acc, obj) => ({ ...acc, ...obj }), {})
 const values = (obj: any) => Object.keys(obj).map(key => obj[key])
 const toArrayObject = (): UseSSRReturn => assign((values(SSRObject), SSRObject))
