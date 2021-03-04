@@ -1,6 +1,6 @@
 {
   "name": "use-ssr",
-  "version": "1.0.23",
+  "version": "1.0.24",
   "description": "☯️ React hook to determine if you're on the server or browser",
   "main": "dist/useSSR.js",
   "homepage": "https://github.com/alex-cory/use-ssr#readme",
@@ -23,8 +23,8 @@
   "license": "MIT",
   "private": false,
   "peerDependencies": {
-    "react": "^16.13.1",
-    "react-dom": "^16.13.1"
+    "react": "^16.13.1 || ^17.0.0",
+    "react-dom": "^16.13.1 || ^17.0.0"
   },
   "devDependencies": {
     "@babel/plugin-proposal-class-properties": "^7.8.3",
