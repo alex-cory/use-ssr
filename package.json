@@ -49,7 +49,7 @@
     "react-native-typescript-transformer": "^1.2.13",
     "react-test-renderer": "^16.13.1",
     "react-testing-library": "^8.0.1",
-    "ts-jest": "^25.3.0",
+    "ts-jest": "^26.0.0",
     "typescript": "^3.8.3"
   },
   "jest": {
