@@ -115,12 +115,14 @@ const [
 ] = useSSR()
 ```
 
+<!--
 Who Uses useSSR?
 ---------------
 
 <p align="center">
   <img height="140px" src="https://user-images.githubusercontent.com/5455859/106836083-55077880-664d-11eb-95a4-d317f06b2f36.png" />
 </p>
+-->
 
 ### Todos
 - [ ] tests for array destructuring
